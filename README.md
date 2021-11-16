@@ -18,10 +18,10 @@ This is my AHK config file for macro's and keybinds. It is application specific 
  
 - Hyper Terminal
   - sudo systemctl restart
-  - <github PAT>
+  - [github PAT]
  
 - Swagger UI
-  - Bearer ^V // <paste token from clipboard>
+  - Bearer ^V  (paste token from clipboard)
  
 - ngrok
   - ngrok http https://localhost:44367 -host-header="localhost:44367" -region in
