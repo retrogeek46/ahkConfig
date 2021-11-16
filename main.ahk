@@ -4,7 +4,7 @@ SendMode Input  ; Recommended for new scripts due to its superior speed and reli
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 SetTitleMatchMode, 2 ; This let's any window that partially matches the given name get activated
 
-IniRead, gitPat, config.ini, GithubPat, PAT
+IniRead, gitPat, swaggerPass, config.ini, GithubPat, PAT, SWAGGER_PASSWORD
 
 F17::
 ^!Q::
@@ -68,7 +68,7 @@ F13::
 Send Bearer ^V
 return
 F14::
-Send rdpl@sourc123
+Send %swaggerPASS%
 return
 
 #ifWinActive ngrok
