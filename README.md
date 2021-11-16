@@ -1,5 +1,5 @@
 # AHK Config
-This is my AHK config file for macro's and keybinds. It is application specific and uses an INI file for reading tokens which are used during SSH connections.
+This is my AHK config file for macro's and keybinds. It is application specific and uses an INI file for reading sensitive keys.
 
 # Application Macro's
 - Azure Data Studio
