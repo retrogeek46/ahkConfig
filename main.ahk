@@ -128,7 +128,7 @@ return
 Pause::
 Send {Shift down}{Right down}{Shift up}{Right up}
 return
-; Change Effects Control panel properties by holding left mouse button and turning knob
+; Change Effects Control panel properties by holding left mouse button and turning knob. Hold Del for finer control
 ~LButton & Pause::
 if GetKeyState("Del")
     MouseMove 1, 0, 2, R
@@ -147,6 +147,15 @@ return
 ; Type main.ahk as you can compile and reload the script from Everyting window itself 
 ^!1::
 Send main.ahk
+return
+
+#ifWinActive YouTube
+; Seek timeline
+ScrollLock::
+Send {Left}
+return
+Pause::
+Send {Right}
 return
 
 ; I use Microsoft Edge ¯\_(ツ)_/¯
