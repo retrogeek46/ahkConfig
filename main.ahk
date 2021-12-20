@@ -31,43 +31,43 @@ LAlt & Pause::AltTab
 LAlt & ScrollLock::ShiftAltTab
 
 #ifWinActive Azure Data Studio
-; Type SELECT * FROM 
+; Type "SELECT * FROM "
 F13::
 ^!1::
 Send SELECT * FROM{space}
 return
 F14::
 ^!2::
-; Run code
+; Run sql query
 Send {f5}
 return
 F15::
 ^!3::
-; Type WITH (NOLOCK)
+; Type "WITH (NOLOCK)"
 Send WITH (NOLOCK)
 return
 
 #ifWinActive Microsoft Visual Studio
-; Type Console.WriteLine(); and place cursor inside parenthesis
+; Type "Debug.Log();" and place cursor inside parenthesis
 F13::
 ^!1::
-Send Console.WriteLine();{Left 2}
+Send Debug.Log();{Left 2}
 return
-; Type Debug.Log(); and place cursor inside parenthesis
+; Type "Console.WriteLine();" and place cursor inside parenthesis
 F14::
 ^!2::
-Send Debug.Log();{Left 2}
+Send Console.WriteLine();{Left 2}
 return
 
 #ifWinActive Visual Studio Code
-; Type logger.info(); and place cursor inside parenthesis
+; Type "logger.info();" and place cursor inside parenthesis
 F13::
 ^!1::
 Send logger.info();{Left 2}
 return
 F14::
 ^!2::
-; Type console.log(); and place cursor inside parenthesis
+; Type "console.log();" and place cursor inside parenthesis
 Send console.log();{Left 2}
 return
 ; Type { get; set; } 
@@ -75,7 +75,7 @@ F15::
 ^!3::
 SendRaw { get; set; }
 return
-; Type flaskRun VendorRating/__init__.py 
+; Type "flaskRun VendorRating/__init__.py "
 F16::
 ^!4::
 Send flaskRun VendorRating/__init__.py
@@ -83,17 +83,17 @@ return
 
 ; Hyper is a terminal for command line stuff
 #ifWinActive Hyper
-; Type sudo systemctl restart 
+; Type "sudo systemctl restart "
 F13::
 ^!1::
 Send sudo systemctl restart{space}
 return
-; Type the github personal access token to access private repo's in remote server
+; Type the github personal access token read from config file
 F14::
 ^!2::
 Send %gitPat%
 return
-; Type cd ZED-Q/zedQRealtimeServer/
+; Type "cd ZED-Q/zedQRealtimeServer/"
 F15::
 ^!3::
 Send cd ZED-Q/zedQRealtimeServer/
@@ -101,12 +101,12 @@ return
 
 ; Swagger UI is used for REST api's interactions
 #ifWinActive Swagger UI
-; First copy JWT from login endpoint, then go to Autorize window and set auth headers
+; Paste jwt from clipboard along with keyword
 F13::
 ^!1::
 Send Bearer ^V
 return
-; Type master password for login endpoint
+; Type master password read from config file for login endpoint
 F14::
 ^!2::
 Send %swaggerPass%
@@ -140,9 +140,9 @@ return
 
 ; Everything is the windows search application by voidtools
 #ifWinActive Everything
-; Type main.ahk as you can compile and reload the script from Everyting window itself 
+; Type "main.ahk" as you can compile and reload the script from Everyting window itself 
 ^!1::Send main.ahk
-; Type redis-server
+; Type "redis-server"
 ^!2::Send redis-server
 
 #ifWinActive YouTube
@@ -161,6 +161,6 @@ q & Pause::Send {Up}
 1::1    ; enable regular function
 1 & ScrollLock::Send ^+{tab}
 1 & Pause::Send ^{tab}
-; Scroll webpages with the knob
+; Scroll open tabs with the knob
 +ScrollLock::Send {WheelUp}
 +Pause::Send {WheelDown}
