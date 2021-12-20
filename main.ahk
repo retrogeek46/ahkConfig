@@ -122,12 +122,8 @@ return
 
 #ifWinActive Adobe Premiere Pro
 ; Timeline scrubbing with knob
-ScrollLock::
-Send {Shift down}{Left down}{Shift up}{Left up}
-return
-Pause::
-Send {Shift down}{Right down}{Shift up}{Right up}
-return
+ScrollLock::Send {Shift down}{Left down}{Shift up}{Left up}
+Pause::Send {Shift down}{Right down}{Shift up}{Right up}
 ; Change Effects Control panel properties by holding left mouse button and turning knob. Hold Del for finer control
 ~LButton & Pause::
 if GetKeyState("Del")
@@ -145,25 +141,26 @@ return
 ; Everything is the windows search application by voidtools
 #ifWinActive Everything
 ; Type main.ahk as you can compile and reload the script from Everyting window itself 
-^!1::
-Send main.ahk
-return
+^!1::Send main.ahk
+; Type redis-server
+^!2::Send redis-server
 
 #ifWinActive YouTube
 ; Seek timeline
-ScrollLock::
-Send {Left}
-return
-Pause::
-Send {Right}
-return
+ScrollLock::Send {Left}
+Pause::Send {Right}
+; Change volume
+q::q    ; enable regular functioning
+q & ScrollLock::Send {Down}
+q & Pause::Send {Up}
+
 
 ; I use Microsoft Edge ¯\_(ツ)_/¯
 #ifWinActive Edge
 ; Cycle through browser tabs
-ScrollLock::
-Send ^+{tab}
-return
-Pause::
-Send ^{tab}
-return
+1::1    ; enable regular function
+1 & ScrollLock::Send ^+{tab}
+1 & Pause::Send ^{tab}
+; Scroll webpages with the knob
++ScrollLock::Send {WheelUp}
++Pause::Send {WheelDown}
