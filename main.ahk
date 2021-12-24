@@ -60,6 +60,9 @@ Send Console.WriteLine();{Left 2}
 return
 
 #ifWinActive Visual Studio Code
+; Move up and down with knob
+ScrollLock::Send {Up}
+Pause::Send {Down}
 ; Type "logger.info();" and place cursor inside parenthesis
 F13::
 ^!1::
@@ -153,7 +156,6 @@ Pause::Send {Right}
 q::q    ; enable regular functioning
 q & ScrollLock::Send {Down}
 q & Pause::Send {Up}
-
 
 ; I use Microsoft Edge ¯\_(ツ)_/¯
 #ifWinActive Edge
